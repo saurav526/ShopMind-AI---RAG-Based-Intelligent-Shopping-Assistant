@@ -3,7 +3,6 @@
 **ShopMind AI** is a production-grade, full-stack Retrieval-Augmented Generation (RAG) shopping platform featuring hybrid semantic + keyword retrieval, cross-feature reranking, LangGraph agentic shopping tools, Groq LLM integration, a 106-question ground-truth RAG evaluation suite, and an OWASP Top 10 for LLM Applications security layer.
 
 ---
-
 ## 1. Key Capabilities
 
 - **12-Stage Grounded Hybrid RAG Pipeline**:
