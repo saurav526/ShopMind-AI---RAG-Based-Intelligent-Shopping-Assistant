@@ -1,5 +1,5 @@
 """Agentic Shopping Assistant with 8 structured tools, LangGraph controlled workflow, and Groq SDK LLM integration."""
-
+# this module defines the ShopMindAgent, which orchestrates product discovery, comparison, and recommendation tasks using a combination of retrieval-augmented generation (RAG), structured tools, and security guardrails.
 import os
 import time
 from typing import Any, Dict, List, Optional, TypedDict
