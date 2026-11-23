@@ -24,7 +24,6 @@ except Exception:
     HAS_FAISS = False
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sqlalchemy.orm import Session
-
 from app.core.config import logger, settings
 from app.models.models import Product
 from app.security.guardrails import AISecurityGuard
