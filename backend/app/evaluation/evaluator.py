@@ -12,7 +12,6 @@ Implements:
   * Hallucination Rate (1 - Faithfulness + penalty for any fabricated product IDs or unverified prices)
 - Performance Metrics: Avg latency, retrieval latency, generation latency, token usage, estimated API cost, retrieval success rate.
 """
-
 import csv
 import io
 import json
