@@ -1,5 +1,6 @@
 """Comprehensive automated pytest test suite for ShopMind AI covering all 12 required quality and security areas."""
 
+# This test suite is designed to validate the functionality, security, and performance of the ShopMind AI application across 12 critical areas. It includes tests for data cleaning and validation, embedding generation and vector store integrity, hybrid retrieval and metadata filtering, similar-product retrieval and shopping tools, conversational context and multi-turn agent workflows, product catalog and comparison APIs, authentication and RBAC authorization, AI security guardrails and automated scanning, evaluation metrics and endpoints, as well as cross-user isolation. The tests utilize FastAPI's TestClient for API endpoint testing, SQLAlchemy for database interactions, and pytest fixtures for setup and teardown of test environments.
 
 
 import io
