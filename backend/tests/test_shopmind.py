@@ -1,10 +1,11 @@
 """Comprehensive automated pytest test suite for ShopMind AI covering all 12 required quality and security areas."""
 
+
+
 import io
 import json
 import pytest
 from fastapi.testclient import TestClient
-
 from app.agents.shopping_agent import ShoppingTools
 from app.core.security import rate_limiter
 from app.database.session import SessionLocal
