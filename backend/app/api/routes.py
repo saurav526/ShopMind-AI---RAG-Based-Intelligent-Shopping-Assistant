@@ -1,5 +1,5 @@
 """Complete FastAPI REST API routers for ShopMind AI."""
-
+# This module defines the complete set of FastAPI API routes for the ShopMind AI application, including endpoints for user authentication, shopping assistant interactions, product management, retrieval-augmented generation (RAG) operations, evaluation framework, AI security monitoring, and administrative functions. Each route is implemented with appropriate request validation, database interactions, and security checks to ensure safe and efficient operation of the application.
 import json
 import uuid
 from typing import Any, Dict, List, Optional
