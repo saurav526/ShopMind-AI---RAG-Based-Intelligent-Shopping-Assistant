@@ -1,10 +1,11 @@
 """Alembic migration environment configured for ShopMind AI SQLAlchemy models."""
 
-from logging.config import fileConfig
+# Alembic migration :- IT is a lightweight database migration tool for SQLAlchemy. It allows developers to manage changes to the database schema over time, providing a way to version control and apply incremental updates to the database structure. Alembic is commonly used in Python applications that utilize SQLAlchemy ORM for database interactions, enabling smooth transitions between different versions of the database schema while preserving data integrity.
 
+
+from logging.config import fileConfig
 from alembic import context
 from sqlalchemy import engine_from_config, pool
-
 from app.core.config import settings
 from app.database.session import Base
 from app.models import models  # noqa: F401
