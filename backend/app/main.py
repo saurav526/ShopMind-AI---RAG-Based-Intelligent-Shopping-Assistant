@@ -1,11 +1,9 @@
 """Main FastAPI application entry point with lifespan initialization, seeding, indexing, and baseline evaluation."""
 
 from contextlib import asynccontextmanager
-
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
-
 from app.api.routes import api_router
 from app.core.config import DATA_DIR, logger, settings
 from app.core.security import hash_password
