@@ -1,5 +1,7 @@
 # ShopMind AI — System Architecture & RAG Design Specification
 
+
+
 ## 1. End-to-End RAG & Agentic Architecture
 
 ```mermaid
