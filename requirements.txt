@@ -1,6 +1,5 @@
 # ShopMind AI — Complete Python Dependencies
 # Install with: pip install -r requirements.txt
-
 # --- Web Framework & Server ---
 fastapi>=0.115.0
 uvicorn[standard]>=0.30.0
@@ -35,3 +34,5 @@ pandas>=2.2.0
 
 # --- Testing & Evaluation ---
 pytest>=8.2.0
+llm-eval>=0.4.0
+
