@@ -2,6 +2,7 @@
 
 # Alembic migration :- IT is a lightweight database migration tool for SQLAlchemy. It allows developers to manage changes to the database schema over time, providing a way to version control and apply incremental updates to the database structure. Alembic is commonly used in Python applications that utilize SQLAlchemy ORM for database interactions, enabling smooth transitions between different versions of the database schema while preserving data integrity.
 
+# SqlAlchemy models :- SQLAlchemy is a popular Python SQL toolkit and Object-Relational Mapping (ORM) library that provides a high-level interface for interacting with relational databases. It allows developers to define database schemas using Python classes (models) and provides an abstraction layer for querying and manipulating data in a database-agnostic manner. SQLAlchemy models represent tables in the database, with attributes corresponding to columns, and support relationships between tables, making it easier to work with complex data structures in Python applications.
 
 from logging.config import fileConfig
 from alembic import context
