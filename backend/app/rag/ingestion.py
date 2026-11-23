@@ -1,4 +1,5 @@
 """Product data ingestion pipeline supporting CSV, JSON, Manual Admin Entry, and Public Product APIs."""
+# This module implements a robust product data ingestion pipeline for the ShopMind AI application. It supports multiple input formats, including CSV files, JSON files, manual admin entry, and public product APIs. The module provides functions to clean, validate, and normalize product records, ensuring data integrity and security against indirect prompt injection attacks. It also handles duplicate detection, category management, and database interactions using SQLAlchemy ORM models. The ingestion process is logged with detailed error reporting and job tracking for auditing and monitoring purposes.
 
 import csv
 import io
