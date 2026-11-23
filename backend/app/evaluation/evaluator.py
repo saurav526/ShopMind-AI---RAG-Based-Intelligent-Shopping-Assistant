@@ -1,5 +1,6 @@
 """Dedicated RAG & Generation Evaluation Framework for ShopMind AI.
 
+
 Implements:
 - Retrieval Metrics: Precision@K, Recall@K, MRR, Hit Rate@K, NDCG@K
 - Generation Metrics (RAGAS / DeepEval mathematical formulations):
