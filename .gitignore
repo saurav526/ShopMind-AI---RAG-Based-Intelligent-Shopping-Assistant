@@ -1,0 +1,43 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# Environment variables & secrets
+.env
+.env.local
+.env.*.local
+
+# Database & Vector indices generated at runtime
+*.db
+*.sqlite3
+data/vector_index/
+backend/data/vector_index/
+
+# Node / Frontend
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+test_results/
+
+# Logs
+*.log
+logs/
+
+# OS & Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
