@@ -1,11 +1,12 @@
 """Relational database ORM models for ShopMind AI."""
 
+#  it explain the model used in the ShopMind AI application, which are defined using SQLAlchemy ORM. The module includes models for users, products, product categories, conversations, messages, user preferences, evaluation runs and results, security events, ingestion jobs, and audit logs. Each model defines the database schema, relationships between entities, and relevant constraints to ensure data integrity and support the application's functionality.
+
+#  
 from datetime import datetime, timezone
 from typing import Any, Dict, List, Optional
 
-from sqlalchemy import (
-    JSON,
-    Boolean,
+from sqlalchemy import (JSON,Boolean,
     CheckConstraint,
     DateTime,
     Float,
