@@ -1,5 +1,6 @@
 """Core application settings and structured logging configuration for ShopMind AI."""
 
+# This module defines the core application settings and structured logging configuration for the ShopMind AI application. It includes a Pydantic-based Settings class that encapsulates various configuration parameters, such as API keys, model settings, database URLs, security settings, and evaluation thresholds. The module also implements a SensitiveLogFilter to redact sensitive information from log messages and a setup_logging function to configure structured logging with JSON formatting.
 import logging
 import os
 import re
