@@ -2,9 +2,7 @@
 
 import re
 from typing import Any, Dict, List, Optional, Tuple
-
 from sqlalchemy.orm import Session
-
 from app.core.config import logger
 from app.models.models import SecurityEvent
 
