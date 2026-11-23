@@ -1,5 +1,5 @@
 """FastAPI authentication, RBAC, and rate limiting dependencies."""
-
+# This module provides FastAPI dependencies for user authentication, role-based access control (RBAC), and rate limiting. It includes functions to enforce rate limits, retrieve the current user, and check for admin privileges, while logging security events using the AISecurityGuard.
 from typing import Optional
 from fastapi import Depends, HTTPException, Request, status
 from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
