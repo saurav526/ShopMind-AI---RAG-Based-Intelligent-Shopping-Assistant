@@ -1,8 +1,9 @@
 """SQLAlchemy database engine and session factory with PostgreSQL primary and SQLite fallback."""
 
+#  this module explain the SQLAlchemy database engine and session factory setup for the ShopMind AI application. It establishes a connection to a PostgreSQL database as the primary data store, with an optional fallback to SQLite if PostgreSQL is unavailable. The module defines a declarative base class for ORM models, configures the database engine with connection pooling and foreign key support, and provides a session generator for database interactions within FastAPI endpoints.
+
 from pathlib import Path
 from typing import Generator
-
 from sqlalchemy import create_engine, event
 from sqlalchemy.orm import DeclarativeBase, Session, sessionmaker
 
