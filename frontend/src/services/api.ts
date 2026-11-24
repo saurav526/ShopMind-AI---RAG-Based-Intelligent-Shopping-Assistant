@@ -144,3 +144,10 @@ export const adminService = {
     return res.data;
   },
 };
+
+export const dataScienceService = {
+  getInsights: async () => {
+    const res = await api.get('/datascience/insights');
+    return res.data;
+  },
+};

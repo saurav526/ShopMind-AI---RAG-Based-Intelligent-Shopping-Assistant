@@ -8,6 +8,7 @@ import {
   BarChart3,
   ShieldAlert,
   Settings,
+  FlaskConical,
   LogIn,
   LogOut,
   User as UserIcon,
@@ -44,6 +45,7 @@ export const Navbar: React.FC<NavbarProps> = ({ user, setUser, compareList }) =>
       badge: compareList.length > 0 ? compareList.length : undefined,
     },
     { path: '/evaluation', label: 'RAG Evaluation', icon: BarChart3 },
+    { path: '/datascience', label: 'Data Science Lab', icon: FlaskConical },
     { path: '/security', label: 'AI Security', icon: ShieldAlert },
     { path: '/admin', label: 'Admin Ops', icon: Settings },
   ];

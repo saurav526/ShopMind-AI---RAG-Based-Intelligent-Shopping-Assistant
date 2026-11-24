@@ -329,3 +329,20 @@ def test_evaluation_metrics_and_endpoints(client: TestClient):
     json_rep = client.get(f"/api/evaluation/report/{run_id}?format=json")
     assert json_rep.status_code == 200
     assert json_rep.json()["run_id"] == run_id
+
+
+# 10. Data Science & Statistical ML Lab endpoint tests
+def test_data_science_insights_endpoint(client: TestClient):
+    resp = client.get("/api/datascience/insights")
+    assert resp.status_code == 200
+    body = resp.json()
+    assert "bayesian_and_anomalies" in body
+    assert len(body["bayesian_and_anomalies"]["top_unicorn_deals"]) == 10
+    assert "pca_manifold" in body
+    assert body["pca_manifold"]["reduced_dimension"] == 2
+    assert len(body["pca_manifold"]["points"]) >= 58
+    assert "ablation_study" in body
+    assert len(body["ablation_study"]) == 5
+    assert "bootstrap_ci" in body
+    assert "mrr" in body["bootstrap_ci"]["metrics"]
+

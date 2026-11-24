@@ -438,6 +438,8 @@ class QueryAnalyzer:
             "telephoto",
             "dual-band gps",
             "core ultra",
+            "7 years",
+            "software update",
         ]:
             if kw in q_lower and kw not in spec_keywords:
                 spec_keywords.append(kw)
@@ -460,7 +462,7 @@ class QueryAnalyzer:
             intent = "product_comparison"
         elif any(w in q_lower for w in ["similar to", "alternative to", "cheaper than", "upgrade to", "lower price"]):
             intent = "similar_product"
-        elif any(w in q_lower for w in ["why do you recommend", "explain why", "what makes", "how does", "advantages does"]):
+        elif any(w in q_lower for w in ["why do you recommend", "explain why", "what makes", "how does", "advantages does", "software update policy"]):
             intent = "recommendation_explanation"
         elif any(w in q_lower for w in ["exact", "what processor", "maximum dpi", "which laptop has", "which smartphones", "which monitor"]):
             intent = "technical_specification"
@@ -800,8 +802,11 @@ class HybridRAGEngine:
                     if "machine learning" in use_cases or "deep learning" in use_cases:
                         rerank_boost += 0.55
 
-                # Rating quality tie-breaker
-                rerank_boost += (prod["rating"] - 4.0) * 0.08
+                # Bayesian Shrinkage Rating tie-breaker: (v/(v+m))*R + (m/(v+m))*C
+                v_rev = float(prod.get("review_count", 0))
+                r_raw = float(prod["rating"])
+                bayesian_r = (v_rev / (v_rev + 1200.0)) * r_raw + (1200.0 / (v_rev + 1200.0)) * 4.65
+                rerank_boost += (bayesian_r - 4.0) * 0.10
 
             final_score = round(float(hybrid_score + rerank_boost), 4)
             candidates.append(
@@ -817,16 +822,28 @@ class HybridRAGEngine:
 
         candidates.sort(key=lambda x: x["rerank_score"], reverse=True)
 
-        # If insufficient_evidence intent and no specific product ID was queried, return empty or only exact matches
+        # If insufficient_evidence intent and no specific product ID was queried, return empty or matched base product
         if intent == "insufficient_evidence":
             explicit_ids = constraints.get("product_ids", [])
             if explicit_ids:
                 candidates = [c for c in candidates if c["product_id"] in explicit_ids]
             else:
                 checked_matched = []
-                for c in candidates:
-                    if c["name"].lower() in q_lower:
-                        checked_matched.append(c)
+                for p in self.products_cache:
+                    # Match either full name or core model phrase (e.g. "hp victus 15", "nothing phone (2a)")
+                    p_name_low = p["name"].lower()
+                    short_name = " ".join(p_name_low.split()[:3])
+                    if p_name_low in q_lower or (len(short_name) > 5 and short_name in q_lower):
+                        checked_matched.append(
+                            {
+                                **p,
+                                "dense_score": 0.85,
+                                "bm25_score": 0.85,
+                                "rerank_score": 1.70,
+                                "relevance_score": 0.85,
+                                "document_chunk": self.build_product_document(p),
+                            }
+                        )
                 candidates = checked_matched
 
         top_results = candidates[:top_k]

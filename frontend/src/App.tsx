@@ -6,6 +6,7 @@ import { AssistantPage } from './pages/AssistantPage';
 import { ExplorerPage } from './pages/ExplorerPage';
 import { ComparisonPage } from './pages/ComparisonPage';
 import { EvaluationPage } from './pages/EvaluationPage';
+import { DataSciencePage } from './pages/DataSciencePage';
 import { SecurityPage } from './pages/SecurityPage';
 import { AdminPage } from './pages/AdminPage';
 import { authService } from './services/api';
@@ -62,6 +63,7 @@ export const App: React.FC = () => {
               }
             />
             <Route path="/evaluation" element={<EvaluationPage />} />
+            <Route path="/datascience" element={<DataSciencePage />} />
             <Route path="/security" element={<SecurityPage />} />
             <Route path="/admin" element={<AdminPage user={user} setUser={setUser} />} />
           </Routes>

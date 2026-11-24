@@ -45,6 +45,7 @@ from app.schemas.schemas import (
 )
 from app.security.guardrails import AISecurityGuard
 from app.security.scanner import SecurityScanner
+from app.services.data_science import DataScienceEngine
 
 api_router = APIRouter(prefix="/api", dependencies=[Depends(enforce_rate_limit)])
 
@@ -861,4 +862,23 @@ def admin_system_health(db: Session = Depends(get_db)):
                 "max_upload_size_mb": settings.MAX_UPLOAD_SIZE_MB,
             },
         },
+    }
+
+
+# =====================================================================
+# 8. DATA SCIENCE & STATISTICAL ML ENDPOINTS (/api/datascience/*)
+# =====================================================================
+@api_router.get("/datascience/insights", tags=["Data Science & ML Lab"])
+def get_data_science_insights(db: Session = Depends(get_db)):
+    rag_engine.ensure_initialized(db)
+    bayesian_and_anomalies = DataScienceEngine.compute_bayesian_ratings_and_anomalies(rag_engine.products_cache)
+    pca_manifold = DataScienceEngine.compute_embedding_manifold_pca(db=db, n_clusters=7)
+    ablation_study = DataScienceEngine.run_retrieval_ablation_study(db=db)
+    bootstrap_ci = DataScienceEngine.compute_bootstrap_confidence_intervals(db=db, n_bootstraps=400)
+
+    return {
+        "bayesian_and_anomalies": bayesian_and_anomalies,
+        "pca_manifold": pca_manifold,
+        "ablation_study": ablation_study,
+        "bootstrap_ci": bootstrap_ci,
     }
