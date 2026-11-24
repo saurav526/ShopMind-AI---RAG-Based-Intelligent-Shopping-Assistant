@@ -11,12 +11,10 @@ Implements:
 import math
 from collections import defaultdict
 from typing import Any, Dict, List
-
 import numpy as np
 from sklearn.cluster import KMeans
 from sklearn.decomposition import PCA
 from sqlalchemy.orm import Session
-
 from app.models.models import EvaluationRun
 from app.rag.pipeline import _tokenize, rag_engine
 
@@ -291,3 +289,5 @@ class DataScienceEngine:
             "confidence_level": "95% Non-Parametric Percentile Bootstrap",
             "metrics": ci_report,
         }
+
+# 
