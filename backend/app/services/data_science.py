@@ -251,6 +251,8 @@ class DataScienceEngine:
 
         return ablation_results
 
+# Bootstrap Confidence Intervals
+
     @staticmethod
     def compute_bootstrap_confidence_intervals(db: Session, n_bootstraps: int = 400) -> Dict[str, Any]:
         """Computes non-parametric 95% Bootstrap Confidence Intervals and Standard Errors over the latest EvaluationRun."""
