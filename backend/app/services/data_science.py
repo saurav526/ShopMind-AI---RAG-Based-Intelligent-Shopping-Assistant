@@ -252,6 +252,7 @@ class DataScienceEngine:
         return ablation_results
 
 # Bootstrap Confidence Intervals
+# This function is used to compute the non-parametric 95% bootstrap confidence intervals and standard errors for ShopMind's RAG evaluation metrics.
 
     @staticmethod
     def compute_bootstrap_confidence_intervals(db: Session, n_bootstraps: int = 400) -> Dict[str, Any]:
