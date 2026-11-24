@@ -165,6 +165,7 @@ class DataScienceEngine:
         }
 
 # this function is used to compute the retrieval ablation study for ShopMind's RAG retrieval system.
+# retrival ablation study is a systematic evaluation of different retrieval architectures to understand their performance and contribution to the overall retrieval system. It helps identify the strengths and weaknesses of each architecture and informs decisions for optimizing the retrieval process.
 
     @staticmethod
     def run_retrieval_ablation_study(db: Session) -> List[Dict[str, Any]]:
