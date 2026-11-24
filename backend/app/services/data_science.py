@@ -18,7 +18,7 @@ from sqlalchemy.orm import Session
 from app.models.models import EvaluationRun
 from app.rag.pipeline import _tokenize, rag_engine
 
-
+# this function is used to compute the statistical analytics and ML experiments for ShopMind's product catalog and RAG retrieval system.
 class DataScienceEngine:
     """Computes statistical product analytics, embedding manifold projections, and retrieval ablation experiments."""
 
