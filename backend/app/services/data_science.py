@@ -103,6 +103,8 @@ class DataScienceEngine:
             "category_statistics": list(cat_summary.values()),
         }
 
+# This function is used to compute the embedding manifold projection and clustering for ShopMind's product embeddings.
+
     @staticmethod
     def compute_embedding_manifold_pca(db: Session, n_clusters: int = 7) -> Dict[str, Any]:
         """Projects 384-D product embeddings to 2D via PCA and runs K-Means clustering in latent space."""
