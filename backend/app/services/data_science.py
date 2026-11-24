@@ -254,6 +254,9 @@ class DataScienceEngine:
 # Bootstrap Confidence Intervals
 # This function is used to compute the non-parametric 95% bootstrap confidence intervals and standard errors for ShopMind's RAG evaluation metrics.
 
+# Bootstrap confidence intervals are a statistical technique used to estimate the uncertainty of a metric by resampling the data with replacement. In this context, it helps quantify the variability of evaluation metrics (like precision, recall, MRR, etc.) for the RAG retrieval system, providing insights into their reliability and robustness.
+
+# 
     @staticmethod
     def compute_bootstrap_confidence_intervals(db: Session, n_bootstraps: int = 400) -> Dict[str, Any]:
         """Computes non-parametric 95% Bootstrap Confidence Intervals and Standard Errors over the latest EvaluationRun."""
