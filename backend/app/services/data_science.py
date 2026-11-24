@@ -164,6 +164,8 @@ class DataScienceEngine:
             "points": points,
         }
 
+# this function is used to compute the retrieval ablation study for ShopMind's RAG retrieval system.
+
     @staticmethod
     def run_retrieval_ablation_study(db: Session) -> List[Dict[str, Any]]:
         """Runs a systematic ablation study across 5 retrieval architectures on a fast 30-query stratified benchmark slice."""
