@@ -1,5 +1,7 @@
 """Main FastAPI application entry point with lifespan initialization, seeding, indexing, and baseline evaluation."""
 
+# This is the main entry point for the ShopMind AI backend application. It initializes the FastAPI app, sets up the database, seeds default users and products, builds the FAISS+BM25 hybrid vector index, and runs baseline evaluations and security tests.
+
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
