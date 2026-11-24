@@ -7,7 +7,7 @@ Implements:
 4. Hybrid Retrieval Weight Ablation & Grid-Search Study (Dense alpha vs BM25 beta vs RRF k)
 5. Non-Parametric Bootstrap 95% Confidence Intervals for RAG Evaluation Metrics
 """
-
+# This calculate the statistical analytics and ML experiments for ShopMind's product catalog and RAG retrieval system.
 import math
 from collections import defaultdict
 from typing import Any, Dict, List
